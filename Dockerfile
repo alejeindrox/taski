@@ -8,6 +8,6 @@ VOLUME /usr/local/bundle
 
 COPY Gemfile Gemfile.lock ./
 
-RUN bundle install --no-cache
+RUN bundle install
 
 COPY . .

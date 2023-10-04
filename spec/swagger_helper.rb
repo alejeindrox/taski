@@ -19,8 +19,10 @@ RSpec.configure do |config|
       openapi: '3.0.1',
       info: {
         title: 'API V1',
-        version: 'v1'
+        version: 'v1',
+        description: 'API for taski an APP for management tasks and projects',
       },
+      basePath: '/api',
       paths: {},
       servers: [
         {
@@ -31,7 +33,14 @@ RSpec.configure do |config|
             }
           }
         }
-      ]
+      ],
+      securityDefinitions: {
+        Bearer: {
+          type: :apiKey,
+          name: 'Authorization',
+          in: :header,
+        },
+      },
     }
   }
 

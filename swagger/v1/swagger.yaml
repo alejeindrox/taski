@@ -3,9 +3,16 @@ openapi: 3.0.1
 info:
   title: API V1
   version: v1
+  description: API for taski an APP for management tasks and projects
+basePath: "/api"
 paths: {}
 servers:
 - url: https://{defaultHost}
   variables:
     defaultHost:
       default: www.example.com
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
