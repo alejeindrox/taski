@@ -9,6 +9,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     networks:
       - taski_network
+
   web:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && rails s -b '0.0.0.0'"
@@ -22,6 +23,7 @@ services:
       - .env
     networks:
       - taski_network
+
   pgadmin:
     image: dpage/pgadmin4
     ports:
@@ -33,6 +35,7 @@ services:
       - db
     networks:
       - taski_network
+
   mailhog:
     image: mailhog/mailhog
     ports:
@@ -40,5 +43,7 @@ services:
       - "1025:1025"
     networks:
       - taski_network
+
+
 networks:
   taski_network:
